@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -11,11 +12,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className='text-red-500'>Lets Build a badass Portfolio!</h1>
-
-      {/* Header */}
+      <Header />
 
       {/* Hero */}
+      <section id='herp'>
+        <Hero />
+      </section>
 
       {/* About */}
 
