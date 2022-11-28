@@ -30,6 +30,7 @@ const Header = (props: Props) => {
         />
 
         <SocialIcon 
+          style={{}}
           url='https://github.com/dgregpm' 
           fgColor='gray' 
           bgColor='transparent'
