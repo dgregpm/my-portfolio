@@ -19,7 +19,7 @@ const Header = (props: Props) => {
           scale: 1
         }}
         transition={{
-          duration: 1.2
+          duration: 1.5
         }}
         className="flex flex-row items-center"
       >
@@ -30,13 +30,7 @@ const Header = (props: Props) => {
         />
 
         <SocialIcon 
-          url='https://www.linkedin.com/in/gregory-p-dickson' 
-          fgColor='gray' 
-          bgColor='transparent'
-        />
-
-        <SocialIcon 
-          url='https://www.linkedin.com/in/gregory-p-dickson' 
+          url='https://github.com/dgregpm' 
           fgColor='gray' 
           bgColor='transparent'
         />
@@ -54,7 +48,7 @@ const Header = (props: Props) => {
           scale: 1
         }}
         transition={{
-          duration: 1.2
+          duration: 1.5
         }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
