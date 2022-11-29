@@ -28,7 +28,7 @@ const Hero = (props: Props) => {
             height={250}
         /> */}
         <div className='z-20'>
-            <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Engineer</h2>
+            <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px] ml-[7.5px]'>Software Engineer</h2>
             <h1 className='text-4xl lg:text-5xl'>
                 <span className='mr-2'>{text}</span>
                 <Cursor cursorColor='#F7AB0A' />
