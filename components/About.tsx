@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
+import { urlFor } from '../sanity'
+import { PageInfo } from '../typings'
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-const About = (props: Props) => {
+const About = ({pageInfo}: Props) => {
   return (
     <div className='flex flex-col relative h-screen text-center md:text-left 
             md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
@@ -39,7 +43,7 @@ const About = (props: Props) => {
             className='flex-shrink-0 max-w-xl'    
         >
             <Image 
-                src='/about.jpg'
+                src={urlFor(pageInfo?.heroImage).url()}
                 alt=''
                 width={1280}
                 height={720}
@@ -57,10 +61,11 @@ const About = (props: Props) => {
             transition={{ 
                 duration: 1.5
             }}
-            className='space-y-10 px-0 md:px-10'>   
+            className='space-y-10 px-0 md:pl-10'
+        > 
+          
             <h4 className='text-4xl font-semibold'>Here is a <span className='underline decoration-[#f7AB0A]/50'>little</span> background</h4>
-            <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nihil ducimus architecto quod iure ratione, alias soluta 
-                inventore ipsam aliquid voluptatum mollitia nostrum dicta exercitationem ab provident, esse facilis commodi.</p>
+            <p className='text-base'>{pageInfo?.backgroundInformation}</p>
         </motion.div>
     </div>
   )
