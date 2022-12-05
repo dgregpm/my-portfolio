@@ -1,10 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Experience } from '../typings'
+import {urlFor} from '../sanity'
 
-type Props = {}
+type Props = {
+    experience: Experience
+}
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ({experience}: Props) => {
     
   return (
     <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
@@ -22,7 +26,7 @@ const ExperienceCard = (props: Props) => {
         >
             <Image 
                 className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover'
-                src='/vercel.svg'
+                src={urlFor(experience?.companyImage).url()}
                 alt=''
                 width={1280}
                 height={720}
@@ -34,40 +38,29 @@ const ExperienceCard = (props: Props) => {
             <h4 className='text-4xl font-light'>CEO of TEKDIMATA</h4>
             <p className='font-bold text-2xl mt-1'>TEKDIMATA</p>
             <div className='flex space-x-2 my-2'>
-                <Image 
-                    src='/vercel.svg'
+                {experience.technologies.map(technology => (
+                    <Image
+                    key={technology._id} 
+                    src={urlFor(technology.image).url()}
                     alt=''
                     width={100}
                     height={100}
                     className='h-10 w-10 rounded-full'
                 />
-                <Image 
-                    src='/vercel.svg'
-                    alt=''
-                    width={100}
-                    height={100}
-                    className='h-10 w-10 rounded-full'
-                />
-                <Image 
-                    src='/vercel.svg'
-                    alt=''
-                    width={100}
-                    height={100}
-                    className='h-10 w-10 rounded-full'
-                />
+                ))}
             </div>
-            <p className='uppercase py-5 text-gray-300'>Started work... - Ended...</p>
+            <p className='uppercase py-5 text-gray-300'>
+                {new Date(experience.dateStarted).toDateString()} - {' '}
+                {experience.isCurrentlyWorkingHere ? 'Present' : new Date(experience.dateEnded).toDateString()}
+            </p>
 
-            <ul className='list-desc space-y-4 ml-5 text-lg'>
-                <li>Summary Points</li>
-                <li>Summary Points</li>
-                <li>Summary Points</li>
-                <li>Summary Points</li>
-                <li>Summary Points</li>
+            <ul className='list-desc space-y-4 ml-5 text-lg h-80 overflow-y-scroll'>
+                {experience.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                ))}
             </ul>
         </div>
     </article>
-
   )
 }
 
