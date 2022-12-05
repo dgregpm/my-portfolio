@@ -74,6 +74,7 @@ const Header = ({ socials }: Props) => {
           network='email' 
           fgColor='gray' 
           bgColor='transparent'
+          
         />
         <p className='uppercase hidden md:inline-flex text-sm text-gray-400'><Link href='#contact'>Get In Touch</Link></p>
         
