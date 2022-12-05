@@ -1,5 +1,5 @@
 export default {
-  name: 'PageInfo',
+  name: 'pageInfo',
   title: 'PageInfo',
   type: 'document',
   fields: [
@@ -16,7 +16,7 @@ export default {
     {
       name: 'heroImage',
       title: 'Image',
-      type: 'Image',
+      type: 'image',
       options: {
         hotspot: true,
       },
