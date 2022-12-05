@@ -6,7 +6,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 
-
 import skill from './skill'
 import social from './social'
 import project from './project'
